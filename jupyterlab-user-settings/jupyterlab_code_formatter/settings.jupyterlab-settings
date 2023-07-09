@@ -1,0 +1,6 @@
+{
+    "black": {
+        "line_length": 88,
+    },
+    "formatOnSave": true,
+}

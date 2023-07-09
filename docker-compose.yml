@@ -1,0 +1,14 @@
+version: '3'
+services:
+  pytorch-lab:
+    image: ${IMAGE}
+    ports:
+      - 8888:8888
+    environment:
+      - JUPYTER_TOKEN=passwd
+    volumes:
+      # workspaceに渡すディレクトリを変えることで任意のプロジェクトで実行可能
+      - ${WORKSPACE}:/workspace
+      - ./jupyterlab-user-settings:/root/.jupyter/lab/user-settings
+      - ./jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+    restart: always
